@@ -1,4 +1,7 @@
-Q = require "q"
+console     = require "madlib-console"
+settings    = require "madlib-settings"
+HostMapping = require "madlib-hostmapping"
+Q           = require "q"
 
 # Disable Q's unhandled exception tracking (it will often give false positives)
 #
@@ -13,15 +16,10 @@ Q.onerror = ( error ) ->
     console.log( message + " Error: ", error, error.stack )
     throw( error )
 
-# Include required bootstrap modules
-#
-console     = require "madlib-console"
-settings    = require "madlib-settings"
-HostMapping = require "madlib-hostmapping"
 
 # Initialise your settings and create hostMapping instance
 #
-hostMapping = new hostMapping( settings )
+hostMapping = new HostMapping( settings )
 
 # Set the debug log level to WARN for production
 #

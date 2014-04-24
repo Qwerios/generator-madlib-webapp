@@ -101,9 +101,9 @@
         this.mkdir( 'src/style/images'  );
 
 
-        this.template( '_package.json',     'package.json' );
-        this.template( 'README.md',         'README.md'    );
-        this.template( 'index.html',        'index.html'   );
+        this.template( '_package.json',     'package.json'      );
+        this.template( 'README.md',         'README.md'         );
+        this.template( 'src/index.html',    'src/index.html'    );
 
         this.copy( 'GruntFile.coffee',      'GruntFile.coffee'  );
         this.copy( 'LICENSE',               'LICENSE'           );

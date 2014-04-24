@@ -98,23 +98,6 @@ module.exports = ( grunt ) ->
                         replacement:    "bundle.js?build=" + ( grunt.option( "bambooNumber" ) or +( new Date() ) )
                     ]
 
-        # Generate code documentation
-        #
-        yuidoc:
-            compile:
-                name: "<%= pkg.name %>"
-                description: "<%= pkg.description %>"
-                version: "<%= pkg.version %>"
-                url: "<%= pkg.homepage %>"
-                options:
-                    paths: grunt.file.expand( [ "src", "node_modules/essent-ses-portal-services/src", "node_modules/essent-ses-portal-services/node_modules/essent-api-*/src" ] )
-                    outdir: "dist/docs"
-                    themedir: "node_modules/yuidoc-marviq-theme"
-                    exclude: "vendor"
-                    syntaxtype: "jsAndCoffee"
-                    extension: ".coffee,.js"
-                    helpers: [ "node_modules/yuidoc-marviq-theme/helpers/helpers.js" ]
-
         # Prepare the dist folder
         #
         copy:
@@ -157,14 +140,6 @@ module.exports = ( grunt ) ->
                 src:    [ "**/*" ]
                 dest:   "."
 
-            yuidoc:
-                options:
-                    archive:  "dist/<%= pkg.name %>-<%= pkg.version %>-docs.zip"
-                expand: true
-                cwd:    "dist/docs"
-                src:    [ "**/*" ]
-                dest:   "."
-
         # Setup the SASS compiling using compass
         #
         compass:
@@ -198,7 +173,6 @@ module.exports = ( grunt ) ->
     grunt.loadNpmTasks "grunt-contrib-copy"
     grunt.loadNpmTasks "grunt-contrib-compress"
     grunt.loadNpmTasks "grunt-contrib-compass"
-    grunt.loadNpmTasks "grunt-contrib-yuidoc"
     grunt.loadNpmTasks "grunt-contrib-uglify"
     grunt.loadNpmTasks "grunt-mocha-test"
     grunt.loadNpmTasks "grunt-string-replace"
@@ -228,12 +202,10 @@ module.exports = ( grunt ) ->
         "uglify:dist"
         "clean:uglify"
         "compass:dist"
-        "yuidoc"
         "copy:dist"
         "string-replace:dist"
         "writeBuildFile"
         "compress:dist"
-        "compress:yuidoc"
     ]
 
     grunt.registerTask "debug",
