@@ -4,7 +4,9 @@
         "name": "<%= authorName %>",
         "url": "https://github.com/Marviq"
     },
-    "browser": {},
+    "browser": {
+        "madlib-xhr":   "madlib-xhr-xdm"
+    },
     "browserify": {
         "transform": [
             "coffeeify",
@@ -17,8 +19,10 @@
     "dependencies": {
         "backbone": "~1.1.2",
         "madlib-console": "~0.1.0",
-        "madlib-settings": "~0.1.2",
         "madlib-hostmapping": "~0.1.6",
+        "madlib-settings": "^0.1.5",
+        "madlib-xhr": "^0.1.8",
+        "madlib-xhr-xdm": "^0.1.12",
         "q": "~1.0.0"
     },
     "description": "<%= packageDescription %>",
