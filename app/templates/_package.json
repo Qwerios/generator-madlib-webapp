@@ -2,7 +2,7 @@
     "author": {
         "email": "<%= authorEmail %>",
         "name": "<%= authorName %>",
-        "url": "https://github.com/Marviq"
+        "url": "https://github.com/Qwerios"
     },
     "browser": {
         "madlib-xhr":   "madlib-xhr-xdm"

@@ -1,21 +1,21 @@
 {
   "name": "generator-madlib-webapp",
   "version": "0.1.4",
-  "description": " yeoman based generator for madlib based webapps",
+  "description": "Yeoman based generator for madlib based webapps",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/Marviq/generator-madlib-webapp",
-  "bugs": "https://github.com/Marviq/generator-madlib-webapp/issues",
+  "homepage": "https://github.com/Qwerios/generator-madlib-webapp",
+  "bugs": "https://github.com/Qwerios/generator-madlib-webapp/issues",
   "author": {
     "name": "Mark Doeswijk",
-    "email": "mark.doeswijk@marviq.com",
-    "url": "https://github.com/Marviq"
+    "email": "mdoeswijk@gmail.com",
+    "url": "https://github.com/Qwerios"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://stash.marviq.com/scm/gen/madlib-webapp.git"
+    "url": "https://github.com/Qwerios/generator-madlib-webapp"
   },
   "scripts": {
     "test": "mocha"

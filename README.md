@@ -4,6 +4,20 @@ A [Yeoman](http://yeoman.io) based generator for madlib based webapps.
 
 
 ## Getting Started
+First make sure yo and and the generator are installed:
+```bash
+$ npm install -g yo generator-madlib-webapp
+```
+
+You may need to have sudo permissions to install globally.
+After that you can create a new madlib module by creating a folder and then using the following command:
+```bash
+$ mkdir madlib-my-webapp
+$ cd madlib-my-webapp
+$ yo madlib-webapp
+```
+
+Yeoman will appear and ask you a few questions. Once they have been answered he will generate the required files to get started.
 
 ### What is Yeoman?
 
