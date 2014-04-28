@@ -1,4 +1,7 @@
 # generator-madlib-webapp
+[![Build Status](https://travis-ci.org/Qwerios/generator-madlib-webapp.svg?branch=master)](https://travis-ci.org/Qwerios/generator-madlib-webapp)  [![NPM version](https://badge.fury.io/js/generator-madlib-webapp.png)](http://badge.fury.io/js/generator-madlib-webapp)
+
+[![Npm Downloads](https://nodei.co/npm/generator-madlib-webapp.png?downloads=true&stars=true)](https://nodei.co/npm/generator-madlib-webapp.png?downloads=true&stars=true)
 
 A [Yeoman](http://yeoman.io) based generator for madlib based webapps.
 
