@@ -185,7 +185,7 @@ module.exports = ( grunt ) ->
         pkg       = grunt.file.readJSON( "package.json" )
         buildInfo =
             number:     grunt.option( "bambooNumber" ) or +( new Date() )
-            key:        grunt.option( "bambooKey"    ) or "SES-LOCALBUILD"
+            key:        grunt.option( "bambooKey"    ) or "LOCALBUILD"
             name:       pkg.name
             version:    pkg.version
             created:    new Date()
