@@ -110,7 +110,6 @@
         this.copy( 'GruntFile.coffee',      'GruntFile.coffee'  );
         this.copy( 'src/index.coffee',      'src/' + this._.slugify( this.mainName ) + '.coffee' );
         this.copy( 'src/config.rb',         'src/config.rb' );
-        this.copy( 'watchify.sh',           'watchify.sh'   );
     };
 
     MadlibWebappGenerator.prototype.projectfiles = function projectfiles( )
