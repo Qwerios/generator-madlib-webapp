@@ -1,6 +1,6 @@
 {
   "name": "generator-madlib-webapp",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Yeoman based generator for madlib based webapps",
   "keywords": [
     "yeoman-generator"
