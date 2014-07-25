@@ -1,8 +1,7 @@
 module.exports = ( grunt ) ->
-
-    sourceFiles = [ "./src/index.coffee", "./src/**/*.hbs" ]
-    watchFiles  = [ "./src/**/*.coffee", "./src/**/*/js", "./src/**/*.hbs", "./src/**/*.html" ]
-    sassFiles   = [ "./src/sass/**/*.scss", "./src/sass/**/*.sass" ]
+    sourceFiles = [ "./lib/index.coffee", "./lib/**/*.hbs" ]
+    watchFiles  = [ "./lib/**/*.coffee", "./lib/**/*/js", "./lib/**/*.hbs", "./lib/**/*.html" ]
+    sassFiles   = [ "./lib/sass/**/*.scss", "./lib/sass/**/*.sass" ]
 
     # Project configuration
     #
@@ -16,7 +15,7 @@ module.exports = ( grunt ) ->
                 src: [ "dist" ]
 
             uglify:
-                src: [ "dist/src/bundle.js" ]
+                src: [ "dist/lib/bundle.js" ]
 
         # Watch the files for changes and rebuild as needed
         #
@@ -28,42 +27,39 @@ module.exports = ( grunt ) ->
                 files: sassFiles
                 tasks: [ "compass:debug", "copy:dist", "string-replace:debug" ]
 
-            demo:
-                files: [ "src/style/index.html" ]
-
 
         # Bundle the code modules
         #
         browserify:
             dist:
                 files:
-                    "dist/src/bundle.js": sourceFiles
+                    "dist/lib/bundle.js": sourceFiles
 
                 options:
                     browserifyOptions:
-                        extensions:         [ ".coffee", ".hbs" ]
+                        extensions:         [ ".js", ".coffee", ".hbs" ]
 
             debug:
                 files:
-                    "dist/src/bundle.js": sourceFiles
+                    "dist/lib/bundle.js": sourceFiles
 
                 options:
                     watch:                  true
                     browserifyOptions:
-                        extensions:         [ ".coffee", ".hbs" ]
+                        extensions:         [ ".js", ".coffee", ".hbs" ]
 
                     bundleOptions:
                         debug:              true
 
             watch:
                 files:
-                    "dist/src/bundle.js": sourceFiles
+                    "dist/lib/bundle.js": sourceFiles
 
                 options:
                     watch:                  true
 
                     browserifyOptions:
-                        extensions:         [ ".coffee", ".hbs" ]
+                        extensions:         [  ".js", ".coffee", ".hbs" ]
 
                     bundleOptions:
                         debug:              true
@@ -73,14 +69,14 @@ module.exports = ( grunt ) ->
         uglify:
             dist:
                 files:
-                    "dist/src/bundle.min.js": [ "dist/src/bundle.js" ]
+                    "dist/lib/bundle.min.js": [ "dist/lib/bundle.js" ]
 
         # Add the build number to the bundle loader for cache busting reasons
         #
         "string-replace":
             dist:
                 files:
-                    "dist/src/index.html": "src/index.html"
+                    "dist/lib/index.html": "lib/index.html"
                 options:
                     replacements: [
                         pattern:        "bundle.min.js"
@@ -88,7 +84,7 @@ module.exports = ( grunt ) ->
                     ]
             debug:
                 files:
-                    "dist/src/index.html": "src/index.html"
+                    "dist/lib/index.html": "lib/index.html"
                 options:
                     replacements: [
                         pattern:        "bundle.min.js"
@@ -115,7 +111,7 @@ module.exports = ( grunt ) ->
                                 "!vendor/**"
                                 "!style/images/icons/*.{png,gif,jpg}"
                             ]
-                        dest: "dist/src"
+                        dest: "dist/lib"
                     ]
 
         # Create the distribution archive
@@ -125,7 +121,7 @@ module.exports = ( grunt ) ->
                 options:
                     archive: "dist/<%= pkg.name %>-<%= pkg.version %>.zip"
                 expand: true
-                cwd:    "dist/src"
+                cwd:    "dist/lib"
                 src:    [ "**/*" ]
                 dest:   "."
 
@@ -133,7 +129,7 @@ module.exports = ( grunt ) ->
                 options:
                     archive: "dist/<%= pkg.name %>-<%= pkg.version %>-DEBUG.zip"
                 expand: true
-                cwd:    "dist/src"
+                cwd:    "dist/lib"
                 src:    [ "**/*" ]
                 dest:   "."
 
@@ -143,14 +139,14 @@ module.exports = ( grunt ) ->
             config:                 "config.rb"
             dist:
                 options:
-                    sassDir:        "src/sass"
-                    cssDir:         "dist/src/style"
+                    sassDir:        "lib/sass"
+                    cssDir:         "dist/lib/style"
                     environment:    "production"
 
             debug:
                 options:
-                    sassDir:        "src/sass"
-                    cssDir:         "dist/src/style"
+                    sassDir:        "lib/sass"
+                    cssDir:         "dist/lib/style"
                     outputStyle:    "nested"
 
         mochaTest:
@@ -187,7 +183,7 @@ module.exports = ( grunt ) ->
             version:    pkg.version
             created:    new Date()
 
-        grunt.file.write( "dist/src/build.json", JSON.stringify( buildInfo, null, "  " ) )
+        grunt.file.write( "dist/lib/build.json", JSON.stringify( buildInfo, null, "  " ) )
     )
 
     # Default tasks

@@ -3,7 +3,7 @@ settings    = require "madlib-settings"
 HostMapping = require "madlib-hostmapping"
 Q           = require "q"
 
-# Disable Q's unhandled exception tracking (it will often give false positives)
+# Disable Q's unhandled exception tracking (it can often give false positives)
 #
 Q.stopUnhandledRejectionTracking()
 

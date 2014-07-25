@@ -1,0 +1,35 @@
+var console     = require( "madlib-console"     );
+var settings    = require( "madlib-settings"    );
+var HostMapping = require( "madlib-hostmapping" );
+var Q           = require( "q"                  );
+
+// Disable Q's unhandled exception tracking (it can often give false positives)
+//
+Q.stopUnhandledRejectionTracking();
+
+// **DEVELOPMENT**
+// On the other hand, when a real promise rejection *does* go unnoticed... rub it in.
+//
+Q.onerror = function( error )
+{
+    var message;
+    message = "[Q] :: Unhandled promise rejection.";
+    console.log( message + " Error: ", error, error.stack );
+    throw error;
+};
+
+// Initialise your settings and create hostMapping instance
+//
+hostMapping = new HostMapping( settings );
+
+// Set the debug log level to WARN for production
+//
+// hostMapping.determineTarget()
+// if hostMapping.getCurrentHostMapping() is "production"
+//     console.logLevel = "WARN"
+// else
+//     console.logLevel = "DEBUG"
+
+
+// Start your application here
+//
