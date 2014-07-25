@@ -5,6 +5,7 @@
 
 A [Yeoman](http://yeoman.io) based generator for madlib based webapps.
 
+This generator uses browserify to bundle the web application. I used CoffeeScript for my index but using CoffeeScript is in no way mandatory.
 
 ## Getting Started
 First make sure yo and and the generator are installed:
@@ -21,6 +22,9 @@ $ yo madlib-webapp
 ```
 
 Yeoman will appear and ask you a few questions. Once they have been answered he will generate the required files to get started.
+
+Grunt is used to build the project. A special grunt task exists called 'dev' that can be used to start watching your development files.
+It will pick up both Sass and source file changes. The watch option for browserify (watchify) is used to rebuild your bundle as quickly as possible.
 
 ### What is Yeoman?
 
