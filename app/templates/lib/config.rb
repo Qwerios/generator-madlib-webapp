@@ -1,6 +1,6 @@
 http_fonts_path     = "fonts";
-css_dir             = "dist/src/style";
-sass_dir            = "src/sass";
-images_dir          = "dist/src/style/images";
-sprite_load_path    = "src/style/images";
+css_dir             = "dist/lib/style";
+sass_dir            = "lib/sass";
+images_dir          = "dist/lib/style/images";
+sprite_load_path    = "lib/style/images";
 relative_assets     = true;
