@@ -98,7 +98,7 @@ module.exports = ( grunt ) ->
                 files:
                     [
                         expand: true
-                        cwd: "src"
+                        cwd: "lib"
                         src:
                             [
                                 "**/*"
